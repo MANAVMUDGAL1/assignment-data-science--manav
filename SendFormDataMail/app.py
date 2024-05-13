@@ -8,8 +8,8 @@ import json
 app=Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
-app.config['MAIL_USERNAME']='themanav2567@gmail.com'
-app.config['MAIL_PASSWORD']='bmnr olfi bvtu kbjr'
+app.config['MAIL_USERNAME']='mail id'
+app.config['MAIL_PASSWORD']='password'
 app.config['MAIL_USE_TLS']=False
 app.config["MAIL_USE_SSL"]=True
 
@@ -45,7 +45,7 @@ def submitdata():
         email=request.form['email']
         password=request.form['password']
         user_data={"user_profession":profession,"user_name":name,"user_email":email,"user_password":password}
-        msg=Message ("i am sending users data using flask",sender='themanav2567@gmail.com',recipients=['swapnilsaraswat19@gmail.com'])
+        msg=Message ("i am sending users data using flask",sender='sender email',recipients=['reciever email'])
         msg.body=json.dumps(user_data)
         mail.send(msg)
         return user_data 
